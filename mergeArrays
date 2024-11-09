@@ -1,0 +1,22 @@
+public class lab4 {
+    public static void main (String[]args){
+
+int[] arr3= {1,2,3};
+        int len3=arr3.length;
+        System.out.println("Enter the elements for array:");
+  
+        int[] arr4= new int[len3];
+        int len4=arr4.length;
+        for(int d=0;d<len4;d++){
+            arr4[d]=input.nextInt();
+            
+        }
+        int[] resultarr= new int[len3+len4];
+        for (int e=0; e<len3; e++){
+            resultarr[e]=arr3[e];    
+        }
+for (int f=len3; f<len4+len4; f++){  
+resultarr[f]=arr4[f-len4];      //here we can aslo make new variable instead of f-len4 
+        }
+       System.out.println("Merged arrays:"+Arrays.toString(resultarr)); 
+}}
