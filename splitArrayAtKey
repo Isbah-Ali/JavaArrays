@@ -1,0 +1,39 @@
+public static void main (String [] args){
+int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        int key = 4; // Key to search for
+        int[][] result = splitArrayAtKeybyIsbah(arr, key);
+        if (result != null) {
+            System.out.println("First Part:");
+           for (int num : result[0]) {
+                System.out.print(num + " ");  }
+            System.out.println();
+            System.out.println("Second Part:");
+            for (int num : result[1]) {
+                System.out.println(num + " ");
+            }
+       }
+     int[] candidates = {10, 1, 2, 7, 6, 5};
+        int target = 8;  
+        List<List<Integer>> result = combinationSum(candidates, target);
+        for (List<Integer> combination : result) {
+           System.out.println(combination);
+          }}
+// METHO D:
+public static int[][] splitArrayAtKeybyIsbah(int[] arr, int key) {
+        // Find the index of the key in the array
+        int keyIndex = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == key) {
+                keyIndex = i;
+                break;   }    }
+        if (keyIndex == -1) {
+            System.out.println("Key not found in the array.");
+            return null;     }
+        int[] firstPart = new int[keyIndex];
+        int[] secondPart = new int[arr.length - keyIndex];
+        System.arraycopy(arr, 0, firstPart, 0, keyIndex);
+
+        System.arraycopy(arr, keyIndex, secondPart, 0, arr.length - keyIndex);
+
+        return new int[][]{firstPart, secondPart};
+    }
